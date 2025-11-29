@@ -1,0 +1,20 @@
+#galeria {
+  display: flex;
+  max-width: 1200px;
+  height: 430px;
+}
+
+#galeria img {
+  min-width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+}
+
+#galeria img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}

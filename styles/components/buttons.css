@@ -1,0 +1,8 @@
+button {
+  background-color: var(--accent);
+  color: var(--text);
+
+  border: none;
+  padding: 6px 12px; /* altura e espaçamento horizontal */
+  border-radius: 12px;
+}
