@@ -6,15 +6,16 @@ nav ul {
   gap: 16px;
 }
 
+@media (max-width: 720px) {
+  nav ul {
+    gap: 3vw;
+    flex-wrap: wrap;
+  }
+}
+
 nav a {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
   opacity: 0.95;
-}
-
-@media (max-width: 720px) {
-  nav ul {
-    display: none;
-  }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uomani Finance</title>
+    <link rel="icon" href="/assets/uomaniFavicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
@@ -19,10 +20,11 @@
       <nav aria-label="Navegação principal">
         <ul>
           <li><a href="#home">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li><button>Entrar</button></li>
+          <li>
+            <button button onclick="loginPopUp.showModal()">Entrar</button>
+          </li>
           <!--Ao serem clicados os botões devem direcionar para uma página tanto para entrar quanto para cadastrar, para entrar será um pop-up que apareça o login e senha para entrar, para cadastar direcionará para uma nova página -->
           <li><button>Cadastrar</button></li>
         </ul>
@@ -35,8 +37,7 @@
           <h1>Gestão financeira clara. Resultados reais.</h1>
           <p>
             Planos personalizados, consultoria e ferramentas para controlar suas
-            finanças pessoais ou da sua empresa — tudo de forma simples e
-            segura.div
+            finanças pessoais ou da sua empresa — tudo de forma simples e segura
           </p>
           <a class="cta" href="#contato">Fale conosco</a>
 
@@ -215,6 +216,20 @@
         © <span id="ano"></span> Uomani Finance — Todos os direitos reservados.
       </div>
     </footer>
+
+    <!-- Pop-up `Entrar` -->
+    <dialog id="loginPopUp">
+      <form method="dialog" id="login-form">
+        <h2>Login</h2>
+        <input id="loginEmail" type="email" placeholder="E-mail" required />
+        <input id="loginSenha" type="password" placeholder="Senha" required />
+
+        <div id="login-buttons">
+          <button type="submit">Entrar</button>
+          <button type="button" onclick="loginPopUp.close()">Cancelar</button>
+        </div>
+      </form>
+    </dialog>
     <script href="scripts/main.js"></script>
   </body>
 </html>

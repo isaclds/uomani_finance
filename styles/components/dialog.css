@@ -1,0 +1,16 @@
+dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: none;
+  background: linear-gradient(180deg, #071024 0%, #081426 100%);
+  min-width: 30vw;
+  border-radius: 60px;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(1.5px); /* Desfoque adicional */
+}

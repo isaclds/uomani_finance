@@ -5,3 +5,10 @@ header {
   gap: 16px;
   padding: 12px 0;
 }
+
+@media (max-width: 720px) {
+  header {
+    flex-direction: column;
+    flex: 1 1 0;
+  }
+}

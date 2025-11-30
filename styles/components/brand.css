@@ -1,10 +1,10 @@
-.marca {
+#marca {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.marca > div:last-child {
+#marca .pequeno {
   font-weight: 800;
 }
 

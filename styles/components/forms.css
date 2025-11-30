@@ -1,1 +1,21 @@
-/* Adicionar os elementos labels e entre outros aqui */
+/* Login form */
+form#login-form {
+  background: linear-gradient(180deg, #071024 0%, #081426 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  padding: 2vw;
+  padding: max(30px, 2vw);
+}
+
+form#login-form h2 {
+  color: var(--text);
+}
+
+form input {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  min-width: 90%;
+}
