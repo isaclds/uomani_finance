@@ -1,0 +1,21 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.hero-left {
+  flex: 1 1 380px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+}
+
+.hero p {
+  color: var(--muted);
+  margin-top: 12px;
+}

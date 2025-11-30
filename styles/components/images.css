@@ -1,20 +1,38 @@
 #galeria {
+  margin: 30px auto;
+  width: 100%;
   display: flex;
-  max-width: 1200px;
-  height: 430px;
+  overflow-x: auto;
 }
 
-#galeria img {
-  min-width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: 0.5s ease;
+#galeria::-webkit-scrollbar {
+  display: none;
 }
 
-#galeria img:hover {
-  cursor: crosshair;
-  width: 300px;
-  opacity: 1;
-  filter: contrast(120%);
+.grupo-imagens {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  animation: spin 60s infinite linear;
+  padding-right: 1em;
+}
+
+.carta-imagem {
+  flex: 0 0 5em;
+  height: 5em;
+  padding: 0.2em;
+  background: var(--card);
+  font-size: 3rem;
+  border-radius: 0.2em;
+  text-align: center;
+  align-content: center;
+}
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
 }

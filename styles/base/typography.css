@@ -1,0 +1,8 @@
+.texto-pequeno {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.texto-pequeno a {
+  color: var(--muted);
+  text-decoration: none;
+}

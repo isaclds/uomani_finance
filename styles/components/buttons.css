@@ -1,6 +1,7 @@
 button {
   background-color: var(--accent);
   color: var(--text);
+  font-weight: 800;
 
   border: none;
   padding: 6px 12px; /* altura e espaçamento horizontal */

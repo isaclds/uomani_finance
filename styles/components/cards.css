@@ -1,0 +1,33 @@
+.carta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.carta {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.carta h3 {
+  margin-top: 0;
+}
+
+.carta-comece {
+  text-align: center;
+  background: var(--carta);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.carta-comece .cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+}

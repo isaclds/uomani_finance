@@ -1,9 +1,18 @@
 body {
+  display: flex;
+  flex-direction: column;
   font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background: linear-gradient(180deg, #071024 0%, #081426 100%);
   color: var(--text);
   line-height: 1.5;
-  max-width: 1200px;
+  max-width: 80%;
+  min-height: 100%;
   margin: 0 auto;
   padding: 24px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    max-width: 98%;
+  }
 }
