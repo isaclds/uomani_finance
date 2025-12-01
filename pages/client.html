@@ -3,8 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uomani Cliente</title>
+    <title>Membros - Uomani Finance</title>
+    <link rel="icon" href="/assets/uomaniFavicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/client.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div id="marca">
+        <div class="logo">U</div>
+        <div>
+          <div>Uomani Finance</div>
+          <div class="pequeno">Soluções financeiras</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/pages/report.html">Relatórios</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="carta">
+        <div class="hero">
+          <div class="hero-left">
+            <h1>Gestão de Membros</h1>
+            <p>Visualize e gerencie os membros da Uomani Finance</p>
+            <button id="btn-adicionar-membro" class="cta">
+              Adicionar Novo Membro
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="filtros-membros" class="carta">
+        <div id="filtros-container">
+          <div class="filtro-grupo">
+            <label for="filtro-status" class="texto-pequeno">Status</label>
+            <select id="filtro-status">
+              <option value="todos">Todos os status</option>
+              <option value="ativo">Ativo</option>
+              <option value="inativo">Inativo</option>
+              <option value="pendente">Pagamento pendente</option>
+            </select>
+          </div>
+
+          <div class="filtro-grupo">
+            <label for="filtro-plano" class="texto-pequeno">Plano</label>
+            <select id="filtro-plano">
+              <option value="todos">Todos os planos</option>
+              <option value="basico">Básico</option>
+              <option value="premium">Premium</option>
+              <option value="empresarial">Empresarial</option>
+            </select>
+          </div>
+
+          <div class="filtro-grupo">
+            <label for="busca-membro" class="texto-pequeno"
+              >Buscar membro</label
+            >
+            <input
+              id="busca-membro"
+              type="text"
+              placeholder="Nome, email ou ID"
+            />
+          </div>
+        </div>
+        <div id="btn-filtros">
+          <button id="btn-aplicar-filtros" class="cta secundario">
+            Aplicar Filtros
+          </button>
+          <button id="btn-limpar-filtros" class="cta terciario">Limpar</button>
+        </div>
+      </section>
+
+      <section id="lista-membros">
+        <div class="cabeçalho-lista">
+          <h2>Lista de Membros</h2>
+          <div class="contador-membros">
+            <span id="total-membros">0</span> membros encontrados
+          </div>
+        </div>
+
+        <!-- Aqui estarão dispostos todos os membros, serão criados a partir de manipulação do dom -->
+        <div class="tabela-container"></div>
+
+        <div class="paginacao">
+          <button id="btn-pagina-anterior" disabled>Anterior</button>
+          <span id="info-paginacao">Página 1 de 1</span>
+          <button id="btn-proxima-pagina" disabled>Próxima</button>
+        </div>
+      </section>
+
+      <!-- Estatísticas rápidas -->
+      <section id="estatisticas" class="carta-grid">
+        <div class="carta">
+          <div class="estatistica-valor" id="total-ativos">0</div>
+          <div class="estatistica-label">Membros Ativos</div>
+        </div>
+
+        <div class="carta">
+          <div class="estatistica-valor" id="total-pendentes">0</div>
+          <div class="estatistica-label">Pagamentos Pendentes</div>
+        </div>
+
+        <div class="carta">
+          <div class="estatistica-valor" id="total-receita-mensal">R$ 0</div>
+          <div class="estatistica-label">Receita Mensal</div>
+        </div>
+
+        <div class="carta">
+          <div class="estatistica-valor" id="media-renda">R$ 0</div>
+          <div class="estatistica-label">Renda Média</div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contato">
+      <div>
+        <div>
+          <h4>Contato</h4>
+          <div class="contatos">
+            <div class="contato-item">
+              <div>Telefone</div>
+              <div class="texto-pequeno">
+                <a href="tel:+5548999999999">+55 (48) 99999-9999</a>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div>Email</div>
+              <div class="texto-pequeno">
+                <a href="mailto:contato@Uomanifinance.com"
+                  >contato@uomanifinance.com</a
+                >
+              </div>
+            </div>
+            <div class="contato-item">
+              <div>Endereço</div>
+              <div class="texto-pequeno">
+                R. José Lino Kretzer, 608 - São José, SC
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="horario-div">
+          <h4>Horário de atendimento</h4>
+          <div class="texto-pequeno">
+            Seg — Sex: 09:00 — 18:00<br />Sáb: 09:00 — 12:00
+          </div>
+          <div class="redes-sociais texto-pequeno">
+            Siga-nos:
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright texto-pequeno">
+        © <span id="ano"></span> Uomani Finance — Todos os direitos reservados.
+      </div>
+    </footer>
+    <script type="module" src="/src/members.js"></script>
+  </body>
 </html>

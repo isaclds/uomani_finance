@@ -1,0 +1,5 @@
+select {
+  border: none;
+  padding: 2px 2px; /* altura e espaçamento horizontal */
+  border-radius: 10px;
+}

@@ -1,0 +1,24 @@
+#filtros-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  gap: 1vh;
+}
+
+.filtro-grupo input {
+  border: none;
+  padding: 3px 3px; /* altura e espaçamento horizontal */
+  border-radius: 10px;
+}
+
+#btn-filtros {
+  display: flex;
+  flex-direction: column;
+}
