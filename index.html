@@ -19,14 +19,18 @@
 
       <nav aria-label="Navegação principal">
         <ul>
-          <li><a href="#home">Início</a></li>
+          <li><a href="/pages/report.html">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
           <li>
-            <button button onclick="loginPopUp.showModal()">Entrar</button>
+            <button id="btn-entrar" button onclick="login.showModal()">
+              Entrar
+            </button>
           </li>
           <!--Ao serem clicados os botões devem direcionar para uma página tanto para entrar quanto para cadastrar, para entrar será um pop-up que apareça o login e senha para entrar, para cadastar direcionará para uma nova página -->
-          <li><button>Cadastrar</button></li>
+          <li>
+            <button button onclick="cadastro.showModal()">Cadastrar</button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -64,10 +68,15 @@
         <div class="carta">
           <h3>Sobre nós</h3>
           <p class="texto-pequeno">
-            A Uomani Finance foi criada para ajudar a simplificar o seu
-            gerenciamento financeiro! Com foco em clareza, tecnologia,
-            transparência atendimento humano, ajudamos pessoas e negócios a
-            tomar decisões melhores.
+            A Uomani Finance nasceu da percepção de que a gestão financeira,
+            muitas vezes cercada de complexidade, pode e deve ser acessível a
+            todos. Fundada por especialistas com experiência no mercado
+            financeiro e em tecnologia, nossa missão é descomplicar o dinheiro —
+            seja para pessoas ou empresas — unindo clareza, transparência e um
+            atendimento próximo. Acreditamos que o planejamento financeiro claro
+            é a base para decisões mais seguras e para uma vida com mais
+            liberdade e tranquilidade. Simplificamos números para que você possa
+            ampliar suas possibilidades.
           </p>
         </div>
         <div id="galeria">
@@ -218,18 +227,48 @@
     </footer>
 
     <!-- Pop-up `Entrar` -->
-    <dialog id="loginPopUp">
+    <dialog id="login">
       <form method="dialog" id="login-form">
         <h2>Login</h2>
-        <input id="loginEmail" type="email" placeholder="E-mail" required />
-        <input id="loginSenha" type="password" placeholder="Senha" required />
+        <input id="login--email" type="email" placeholder="E-mail" required />
+        <input id="login-senha" type="password" placeholder="Senha" required />
 
         <div id="login-buttons">
-          <button type="submit">Entrar</button>
-          <button type="button" onclick="loginPopUp.close()">Cancelar</button>
+          <button id="login-btn-entrar" type="submit">Entrar</button>
+          <button type="button" onclick="login.close()">Cancelar</button>
         </div>
       </form>
     </dialog>
-    <script href="scripts/main.js"></script>
+
+    <dialog id="cadastro">
+      <form method="dialog" id="cadastro-form">
+        <h2>Cadastro</h2>
+        <input
+          id="cadastro-nome"
+          type="text"
+          placeholder="Nome Completo"
+          required
+        />
+        <input id="cadastro-email" type="email" placeholder="E-mail" required />
+        <input
+          id="cadastro-senha"
+          type="password"
+          placeholder="Senha"
+          required
+        />
+        <input id="renda-media" type="float" placeholder="Renda Média Mensal" />
+        <input
+          id="data-nascimento"
+          type="date"
+          placeholder="Data de Nascimento"
+          required
+        />
+        <div id="cadastro-buttons">
+          <button id="cadastro-btn-cadastrar" type="submit">Entrar</button>
+          <button type="button" onclick="cadastro.close()">Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>

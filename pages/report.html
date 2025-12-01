@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relatórios Uomani</title>
+    <title>Relatórios - Uomani Finance</title>
+    <link rel="icon" href="/assets/uomaniFavicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/report.css" />
   </head>
   <body>
-    <div></div>
-    <!-- Criar código para criação dos relatorios a partir dessa div -->
+    <header>
+      <div class="logo">U</div>
+      <div>
+        <div>Uomani Finance</div>
+        <div class="pequeno">Soluções financeiras</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="carta">
+        <h1>Relatórios</h1>
+      </section>
+
+      <section id="select-relatorio" class="carta">
+        <select>
+          <option value="mensal">Relatório de Membros</option>
+          <option value="anual">Relatório de Pagamentos</option>
+        </select>
+        <button>Gerar Relatório</button>
+      </section>
+
+      <!-- DIV PRINCIPAL PARA MANIPULAÇÃO VIA DOM -->
+      <div id="relatorio-container" class="carta-grid">
+        <!-- O conteúdo será injetado via JavaScript -->
+        <div class="carta" style="text-align: center; padding: 40px">
+          <p>Carregando relatórios...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contato">
+      <div>
+        <div>
+          <h4>Contato</h4>
+          <div class="contatos">
+            <div class="contato-item">
+              <div>Telefone</div>
+              <div class="texto-pequeno">
+                <a href="tel:+5548999999999">+55 (48) 99999-9999</a>
+              </div>
+            </div>
+            <div class="contato-item">
+              <div>Email</div>
+              <div class="texto-pequeno">
+                <a href="mailto:contato@Uomanifinance.com"
+                  >contato@uomanifinance.com</a
+                >
+              </div>
+            </div>
+            <div class="contato-item">
+              <div>Endereço</div>
+              <div class="texto-pequeno">
+                R. José Lino Kretzer, 608 - São José, SC
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="horario-div">
+          <h4>Horário de atendimento</h4>
+          <div class="texto-pequeno">
+            Seg — Sex: 09:00 — 18:00<br />Sáb: 09:00 — 12:00
+          </div>
+          <div class="redes-sociais texto-pequeno">
+            Siga-nos:
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright texto-pequeno">
+        © <span id="ano"></span> Uomani Finance — Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>
