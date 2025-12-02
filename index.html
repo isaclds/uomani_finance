@@ -226,11 +226,11 @@
       </div>
     </footer>
 
-    <!-- Pop-up `Entrar` -->
+    <!-- Login -->
     <dialog id="login">
       <form method="dialog" id="login-form">
         <h2>Login</h2>
-        <input id="login--email" type="email" placeholder="E-mail" required />
+        <input id="login-email" type="email" placeholder="E-mail" required />
         <input id="login-senha" type="password" placeholder="Senha" required />
 
         <div id="login-buttons">
@@ -240,6 +240,7 @@
       </form>
     </dialog>
 
+    <!-- Cadastro -->
     <dialog id="cadastro">
       <form method="dialog" id="cadastro-form">
         <h2>Cadastro</h2>
@@ -256,19 +257,23 @@
           placeholder="Senha"
           required
         />
-        <input id="renda-media" type="float" placeholder="Renda Média Mensal" />
         <input
-          id="data-nascimento"
+          id="cadastro-renda"
+          type="float"
+          placeholder="Renda Média Mensal"
+        />
+        <input
+          id="cadastro-data-nascimento"
           type="date"
           placeholder="Data de Nascimento"
           required
         />
         <div id="cadastro-buttons">
-          <button id="cadastro-btn-cadastrar" type="submit">Entrar</button>
+          <button id="cadastro-btn-cadastrar" type="submit">Cadastrar</button>
           <button type="button" onclick="cadastro.close()">Cancelar</button>
         </div>
       </form>
     </dialog>
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>
