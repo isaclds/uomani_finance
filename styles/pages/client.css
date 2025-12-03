@@ -27,3 +27,31 @@
   display: block;
   width: 90%;
 }
+
+#lista-membros-lista {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(250px, 22vw, 360px), 1fr)
+  );
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5vw;
+}
+
+#lista-membros-lista .carta {
+  display: block;
+  width: fit-content;
+  min-width: 230px;
+  width: 100%;
+}
+
+.carta .label {
+  font-weight: bold;
+}
+
+.carta .btn-grupo {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6%;
+  margin-top: 2vh;
+}

@@ -5,7 +5,7 @@ export function formatarRenda(valor) {
   stringValor = stringValor.replace(/^0+(?=\d)/, "");
 
   // Separa inteiros e decimais
-  const partes = stringValor.split(".");
+  const partes = stringValor.split(",");
   let inteiros = partes[0];
   const decimais = partes[1] || "";
 

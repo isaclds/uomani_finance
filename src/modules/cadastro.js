@@ -10,7 +10,7 @@ const cadastrar = function () {
     rendaMedia: formulario["cadastro-renda"].value,
     plano: formulario["cadastro-plano"].value,
     //Verificar se o campo estado existe, se não existir, definir como ativo
-    estado: formulario["cadastro-status"]
+    status: formulario["cadastro-status"]
       ? formulario["cadastro-status"].value
       : "ativo",
     dataNascimento: formulario["cadastro-data-nascimento"].value,
