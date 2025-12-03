@@ -1,11 +1,13 @@
-"use strict";
+import { gerarIdComPrefixo } from "../utils/gerarID.js";
+
+("use strict");
 const formulario = document.getElementById("cadastro-form");
 
 const cadastrar = function () {
-  const email = formulario["cadastro-email"].value.toLowerCase();
+  const id = gerarIdComPrefixo();
   const dadosCliente = {
     nome: formulario["cadastro-nome"].value,
-    email: email,
+    email: formulario["cadastro-email"].value.toLowerCase(),
     senha: formulario["cadastro-senha"].value,
     rendaMedia: formulario["cadastro-renda"].value,
     plano: formulario["cadastro-plano"].value,
@@ -17,7 +19,7 @@ const cadastrar = function () {
   };
 
   try {
-    localStorage.setItem(email, JSON.stringify(dadosCliente));
+    localStorage.setItem(id, JSON.stringify(dadosCliente));
     alert("Cadastro realizado com sucesso!");
     formulario.reset();
     document.getElementById("cadastro").close();

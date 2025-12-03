@@ -1,8 +1,14 @@
 import { capitalizarPrimeiraLetra } from "../utils/capitalizarPrimeiraLetra.js";
 import { formatarRenda } from "../utils/formatarRenda.js";
 import { acessarMembros } from "../utils/acessarMembros.js";
+import { filtraMembro } from "../utils/filtraMembro.js";
 
 const listaMembros = document.getElementById("lista-membros-lista");
+const btnFiltrar = document.getElementById("btn-aplicar-filtros");
+const filtroStatus = document.getElementById("filtro-status");
+const filtroPlano = document.getElementById("filtro-plano");
+const filtroID = document.getElementById("busca-membro");
+const membros = acessarMembros();
 
 function criarCartaMembro(membro) {
   const nome = capitalizarPrimeiraLetra(membro["nome"]);
@@ -47,12 +53,26 @@ function criarCartaMembro(membro) {
   return container;
 }
 
-if (listaMembros) {
+const displayMembros = function () {
   listaMembros.innerHTML = "";
 
-  const membros = acessarMembros();
-
   membros.forEach((membro) => {
-    listaMembros.appendChild(criarCartaMembro(membro));
+    if (
+      //Corrigir problemas do plano "Básico", remover o acento para fazer a validação
+      filtraMembro(
+        membro,
+        filtroStatus.value.toLowerCase(),
+        filtroPlano.value.toLowerCase(),
+        filtroID.value
+      )
+    ) {
+      listaMembros.appendChild(criarCartaMembro(membro));
+    }
   });
+};
+
+if (listaMembros) {
+  displayMembros();
+
+  btnFiltrar.addEventListener("click", displayMembros);
 }
