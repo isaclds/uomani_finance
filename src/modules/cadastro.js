@@ -20,6 +20,11 @@ const cadastrar = function () {
     localStorage.setItem(email, JSON.stringify(dadosCliente));
     alert("Cadastro realizado com sucesso!");
     formulario.reset();
+    document.getElementById("cadastro").close();
+    if (!formulario["cadastro-status"]) {
+      window.location.href = "/pages/client.html";
+    }
+    console.log(formulario);
   } catch (error) {
     alert("Cadastro não foi realizado, estamos trabalhando para realiza-lo!");
     console.error("Erro ao cadastrar cliente:", error);

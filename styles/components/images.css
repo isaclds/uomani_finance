@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   overflow-x: auto;
+  display: none;
 }
 
 #galeria::-webkit-scrollbar {
