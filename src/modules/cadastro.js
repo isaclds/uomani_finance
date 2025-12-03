@@ -1,28 +1,34 @@
+"use strict";
 const formulario = document.getElementById("cadastro-form");
 
-function cadastrar() {
+const cadastrar = function () {
   const email = formulario["cadastro-email"].value.toLowerCase();
-  console.log("entrou");
-
   const dadosCliente = {
     nome: formulario["cadastro-nome"].value,
     email: email,
     senha: formulario["cadastro-senha"].value,
-    rendaMedia: parseFloat(formulario["cadastro-renda"].value),
+    rendaMedia: formulario["cadastro-renda"].value,
+    plano: formulario["cadastro-plano"].value,
+    //Verificar se o campo estado existe, se não existir, definir como ativo
+    estado: formulario["cadastro-status"]
+      ? formulario["cadastro-status"].value
+      : "ativo",
     dataNascimento: formulario["cadastro-data-nascimento"].value,
   };
 
   try {
     localStorage.setItem(email, JSON.stringify(dadosCliente));
-    console.log("Cadastro realizado com sucesso!");
+    alert("Cadastro realizado com sucesso!");
     formulario.reset();
-    // Redireciona para página de clientes após o cadastro
-    window.location.href = "/pages/client.html";
   } catch (error) {
-    console.error("Erro ao salvar no localStorage:", error);
+    alert("Cadastro não foi realizado, estamos trabalhando para realiza-lo!");
+    console.error("Erro ao cadastrar cliente:", error);
   }
-}
+};
 
-export function configurarEventosCadastro() {
-  formulario.addEventListener("submit", cadastrar);
+if (formulario) {
+  formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+    cadastrar();
+  });
 }

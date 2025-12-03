@@ -9,6 +9,7 @@ dialog {
   background: linear-gradient(180deg, #071024 0%, #081426 100%);
   min-width: 30vw;
   border-radius: 60px;
+  align-items: stretch;
 }
 
 dialog::backdrop {

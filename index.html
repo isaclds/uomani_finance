@@ -241,7 +241,7 @@
     </dialog>
 
     <!-- Cadastro -->
-    <dialog id="cadastro">
+    <dialog class="cadastro" id="cadastro">
       <form method="dialog" id="cadastro-form">
         <h2>Cadastro</h2>
         <input
@@ -259,15 +259,23 @@
         />
         <input
           id="cadastro-renda"
-          type="float"
+          type="number"
+          step="0.01"
+          min="0"
           placeholder="Renda Média Mensal"
         />
-        <input
-          id="cadastro-data-nascimento"
-          type="date"
-          placeholder="Data de Nascimento"
-          required
-        />
+        <select id="cadastro-plano" required>
+          <option value="">Tipo de Plano</option>
+          <option value="basico">Básico</option>
+          <option value="premium">Premium</option>
+          <option value="empresarial">Empresarial</option>
+        </select>
+        <label
+          >Data de Nascimento<input
+            id="cadastro-data-nascimento"
+            type="date"
+            required
+        /></label>
         <div id="cadastro-buttons">
           <button id="cadastro-btn-cadastrar" type="submit">Cadastrar</button>
           <button type="button" onclick="cadastro.close()">Cancelar</button>

@@ -22,3 +22,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.filtro-grupo input {
+  display: block;
+  width: 90%;
+}
