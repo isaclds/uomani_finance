@@ -4,5 +4,7 @@ export function capitalizarPrimeiraLetra(texto) {
   return texto
     .trim()
     .toLowerCase()
-    .replace(/\b\w/g, (letra) => letra.toUpperCase());
+    .replace(/(?:^|\s)([a-záéíóúâêôãõç])/g, (match, letra) =>
+      match[0] === " " ? " " + letra.toUpperCase() : letra.toUpperCase()
+    );
 }

@@ -2,10 +2,15 @@ import { gerarIdComPrefixo } from "../utils/gerarID.js";
 
 ("use strict");
 const formulario = document.getElementById("cadastro-form");
+const listaMembros = document.getElementById("lista-membros");
+let identificacao = false;
 
 const cadastrar = function () {
-  const id = gerarIdComPrefixo();
+  const id = identificacao ? identificacao : gerarIdComPrefixo();
+  identificacao = false;
+
   const dadosCliente = {
+    id: id,
     nome: formulario["cadastro-nome"].value,
     email: formulario["cadastro-email"].value.toLowerCase(),
     senha: formulario["cadastro-senha"].value,
@@ -32,6 +37,16 @@ const cadastrar = function () {
     console.error("Erro ao cadastrar cliente:", error);
   }
 };
+
+//Editar
+listaMembros.addEventListener("click", (event) => {
+  if (event.target.classList.contains("btn-editar")) {
+    identificacao = event.target.dataset.id;
+
+    const dialogCadastro = document.getElementById("cadastro");
+    dialogCadastro.showModal();
+  }
+});
 
 if (formulario) {
   formulario.addEventListener("submit", function (event) {

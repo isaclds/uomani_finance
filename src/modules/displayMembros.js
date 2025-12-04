@@ -16,36 +16,37 @@ function criarCartaMembro(membro) {
   const rendaMedia = formatarRenda(membro["rendaMedia"]);
   const plano = capitalizarPrimeiraLetra(membro["plano"]);
   const status = capitalizarPrimeiraLetra(membro["status"]);
+  const id = membro["id"];
 
   const container = document.createElement("div");
   container.className = "carta";
 
   container.innerHTML = `
   <div class="cliente-header">
-    <h3 id="cliente-nome">${nome}</h3>
-    <span class="cliente-status" id="cliente-status">${status}</span>
+    <h3 class="cliente-nome">${nome}</h3>
+    <span class="cliente-status" class="cliente-status">${status}</span>
   </div>
   
   <div class="cliente-info">
     <div>
       <span class="label">Email:</span>
-      <span id="cliente-email">${email}</span>
+      <span class="cliente-email">${email}</span>
     </div>
     
     <div>
       <span class="label">Renda Média:</span>
-      <span id="cliente-renda">R$ ${rendaMedia}</span>
+      <span class="cliente-renda">R$ ${rendaMedia}</span>
     </div>
     
     <div>
       <span class="label">Plano:</span>
-      <span id="cliente-plano">${plano}</span>
+      <span class="cliente-plano">${plano}</span>
     </div>
   </div>
   
   <div class="btn-grupo">
-    <button id="btn-editar">Editar</button>
-    <button id="btn-deletar">Deletar</button>
+    <button class="btn-editar" data-id="${id}">Editar</button>
+    <button class="btn-deletar" data-id="${id}">Deletar</button>
   </div>
     `;
   //Alterar o btn-editar e btn-deletar depois
@@ -56,9 +57,13 @@ function criarCartaMembro(membro) {
 const displayMembros = function () {
   listaMembros.innerHTML = "";
 
-  membros.forEach((membro) => {
+  for (const membro of membros) {
+    // Pula os membros deletados
+    if (membro.deletado) {
+      continue;
+    }
+
     if (
-      //Corrigir problemas do plano "Básico", remover o acento para fazer a validação
       filtraMembro(
         membro,
         filtroStatus.value.toLowerCase(),
@@ -68,8 +73,19 @@ const displayMembros = function () {
     ) {
       listaMembros.appendChild(criarCartaMembro(membro));
     }
-  });
+  }
 };
+
+//Deletar
+listaMembros.addEventListener("click", (event) => {
+  if (event.target.classList.contains("btn-deletar")) {
+    const identificacao = event.target.dataset.id;
+
+    const membro = JSON.parse(localStorage.getItem(identificacao));
+    membro.deletado = true;
+    localStorage.setItem(identificacao, JSON.stringify(membro));
+  }
+});
 
 if (listaMembros) {
   displayMembros();

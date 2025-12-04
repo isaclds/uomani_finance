@@ -42,7 +42,12 @@ const receitaMediaMensal = function (membros) {
 };
 
 if (totalMembros && totalAtivos && receitaMensal && mediaReceita) {
-  const membros = acessarMembros();
+  const membrosTotal = acessarMembros();
+  const membros = [];
+  for (const membro of membrosTotal) {
+    if (membro.deletado) continue;
+    membros.push(membro);
+  }
 
   //Atualizar membros
   atualizarMembros(membros);
