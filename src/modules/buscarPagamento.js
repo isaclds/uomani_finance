@@ -1,5 +1,6 @@
 import { capitalizarPrimeiraLetra } from "../utils/capitalizarPrimeiraLetra.js";
 import { formatarRenda } from "../utils/formatarRenda.js";
+import { verificaPagamento } from "../utils/verificaPagamento.js";
 
 const btn = document.getElementById("btn-buscar-membro");
 
@@ -8,8 +9,9 @@ const buscarPagamento = function () {
   const dialog = document.getElementById("mostraPagamento");
   dialog.classList.remove("hidden");
 
-  if (idPagamento && !!localStorage.getItem(idPagamento)) {
-    const pagamento = JSON.parse(localStorage.getItem(idPagamento));
+  const pagamento = verificaPagamento(idPagamento);
+
+  if (pagamento) {
     const membroAssociado = pagamento["membro"];
     const nomeMembro = JSON.parse(localStorage.getItem(membroAssociado))[
       "nome"
@@ -51,7 +53,7 @@ const buscarPagamento = function () {
       dialog.close();
     });
   } else {
-    alert("Esse pagamento não existe!");
+    alert("Esse pagamento não está presente no nosso sistema!");
   }
 };
 
