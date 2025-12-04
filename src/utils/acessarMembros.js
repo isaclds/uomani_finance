@@ -1,15 +1,14 @@
 export function acessarMembros() {
-  const todosMembros = { ...localStorage };
+  const todosElementos = Object.entries(localStorage);
 
-  if (Object.keys(todosMembros).length === 0) {
-    listaMembros.innerHTML =
-      '<div class="sem-membros">Nenhum membro cadastrado.</div>';
-  }
+  // Filtra apenas as chaves que começam com "membro_"
+  const todosMembros = todosElementos.filter(([chave]) =>
+    chave.startsWith("membro_")
+  );
 
-  const membros = Object.entries(todosMembros).map(([chave, valor]) => {
+  const membros = todosMembros.map(([chave, valor]) => {
     try {
       const membro = JSON.parse(valor);
-      membro.chave = chave; // Guarda a chave para caso queira deletar o usuario
       return membro;
     } catch (error) {
       console.error(chave, error);
