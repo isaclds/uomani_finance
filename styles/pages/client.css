@@ -1,3 +1,17 @@
+#principal {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  min-width: 250px;
+  justify-content: space-around;
+}
+
+.hero {
+  padding: 1%;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
 #filtros-container {
   display: flex;
   justify-content: space-evenly;

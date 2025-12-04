@@ -21,18 +21,19 @@
       <nav aria-label="Navegação principal">
         <ul>
           <li><a href="/index.html">Início</a></li>
+          <li><a href="/pages/client.html">Membros</a></li>
           <li><a href="/pages/report.html">Relatórios</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="/pages/pagamentos.html">Pagamentos</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section class="carta">
-        <div class="hero">
+      <section id="principal">
+        <div class="hero carta">
           <div class="hero-left">
-            <h1>Gestão de Membros</h1>
-            <p>Visualize e gerencie os membros da Uomani Finance</p>
+            <h2>Gestão de Membros</h2>
+            <p>Gerencie os membros da Uomani Finance</p>
             <button
               id="btn-adicionar-membro"
               class="cta"
@@ -41,6 +42,22 @@
             >
               Adicionar Novo Membro
             </button>
+          </div>
+        </div>
+        <div class="hero carta">
+          <div class="hero-left">
+            <h2>Pagamentos</h2>
+            <p>Gere e gerencie os pagamentos da Uomani Finance</p>
+            <div>
+              <button
+                id="btn-gerenciar-pagamento"
+                class="cta"
+                type="button"
+                onclick="window.location.href='./pagamentos.html'"
+              >
+                Gerenciar Pagamentos
+              </button>
+            </div>
           </div>
         </div>
       </section>

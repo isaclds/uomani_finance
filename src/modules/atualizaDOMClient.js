@@ -38,7 +38,11 @@ const receitaMediaMensal = function (membros) {
     receitaMediaMensal += Number(membro["rendaMedia"]);
   }
   receitaMediaMensal = (receitaMediaMensal / membros.length).toFixed(2);
-  mediaReceita.textContent = "R$ " + formatarRenda(receitaMediaMensal);
+  mediaReceita.textContent =
+    "R$ " +
+    (formatarRenda(receitaMediaMensal) === NaN
+      ? formatarRenda(receitaMediaMensal)
+      : 0);
 };
 
 if (totalMembros && totalAtivos && receitaMensal && mediaReceita) {
