@@ -22,34 +22,33 @@ function criarCartaMembro(membro) {
   container.className = "carta";
 
   container.innerHTML = `
-  <div class="cliente-header">
-    <h3 class="cliente-nome">${nome}</h3>
-    <span class="cliente-status" class="cliente-status">${status}</span>
+  <div>
+    <h3>${nome}</h3>
+    <span>${status}</span>
   </div>
   
-  <div class="cliente-info">
+  <div">
     <div>
-      <span class="label">Email:</span>
-      <span class="cliente-email">${email}</span>
+      <span>Email:</span>
+      <span>${email}</span>
     </div>
     
     <div>
-      <span class="label">Renda Média:</span>
-      <span class="cliente-renda">R$ ${rendaMedia}</span>
+      <span>Renda Média:</span>
+      <span>R$ ${rendaMedia}</span>
     </div>
     
     <div>
-      <span class="label">Plano:</span>
-      <span class="cliente-plano">${plano}</span>
+      <span>Plano:</span>
+      <span">${plano}</span>
     </div>
   </div>
   
-  <div class="btn-grupo">
-    <button class="btn-editar" data-id="${id}">Editar</button>
-    <button class="btn-deletar" data-id="${id}">Deletar</button>
+  <div>
+    <button data-id="${id}">Editar</button>
+    <button data-id="${id}">Deletar</button>
   </div>
     `;
-  //Alterar o btn-editar e btn-deletar depois
 
   return container;
 }

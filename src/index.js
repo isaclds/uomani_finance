@@ -4,6 +4,7 @@ export * from "./modules/displayMembros.js";
 export * from "./modules/atualizaDOMClient.js";
 export * from "./modules/editarMembro.js";
 export * from "./modules/cadastroPagamento.js";
+export * from "./modules/buscarPagamento.js";
 
 // Função para inicializar tudo quando a página carregar
 const initApp = function () {
