@@ -38,17 +38,16 @@ const cadastrar = function () {
   }
 };
 
-//Editar
-listaMembros.addEventListener("click", (event) => {
-  if (event.target.classList.contains("btn-editar")) {
-    identificacao = event.target.dataset.id;
-
-    const dialogCadastro = document.getElementById("cadastro");
-    dialogCadastro.showModal();
-  }
-});
-
 if (formulario) {
+  //Editar
+  listaMembros.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-editar")) {
+      identificacao = event.target.dataset.id;
+
+      const dialogCadastro = document.getElementById("cadastro");
+      dialogCadastro.showModal();
+    }
+  });
   formulario.addEventListener("submit", function (event) {
     event.preventDefault();
     cadastrar();

@@ -33,7 +33,7 @@
           <form class="hero-left" id="gerar-pagamento">
             <h2>Gerar Pagamento</h2>
             <input
-              id="cadastro-renda"
+              id="valor-pagamento"
               type="number"
               step="0.01"
               min="0"
@@ -43,22 +43,19 @@
             <input
               id="membro-associado"
               type="text"
-              placeholder="Nome do Membro"
+              placeholder="ID do Membro"
               required
             />
             <input
-              id="descricao"
+              id="descricao-pagamento"
               type="text"
               placeholder="Descrição"
               required
             />
             <label
-              >Data de Nascimento<input
-                id="cadastro-data-nascimento"
-                type="date"
-                required
+              >Data do Pagamento<input id="data-pagamento" type="date" required
             /></label>
-            <button id="btn-adicionar-membro" class="cta" type="submit">
+            <button id="btn-adicionar-pagamento" class="cta" type="submit">
               Gerar
             </button>
           </form>

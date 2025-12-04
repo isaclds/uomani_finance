@@ -76,18 +76,18 @@ const displayMembros = function () {
   }
 };
 
-//Deletar
-listaMembros.addEventListener("click", (event) => {
-  if (event.target.classList.contains("btn-deletar")) {
-    const identificacao = event.target.dataset.id;
-
-    const membro = JSON.parse(localStorage.getItem(identificacao));
-    membro.deletado = true;
-    localStorage.setItem(identificacao, JSON.stringify(membro));
-  }
-});
-
 if (listaMembros) {
+  //Deletar
+  listaMembros.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-deletar")) {
+      const identificacao = event.target.dataset.id;
+
+      const membro = JSON.parse(localStorage.getItem(identificacao));
+      membro.deletado = true;
+      localStorage.setItem(identificacao, JSON.stringify(membro));
+    }
+  });
+
   displayMembros();
 
   btnFiltrar.addEventListener("click", displayMembros);
