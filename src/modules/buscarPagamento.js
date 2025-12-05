@@ -7,11 +7,11 @@ const btn = document.getElementById("btn-buscar-membro");
 const buscarPagamento = function () {
   const idPagamento = document.getElementById("busca-pagamento").value;
   const dialog = document.getElementById("mostraPagamento");
-  dialog.classList.remove("hidden");
 
   const pagamento = verificaPagamento(idPagamento);
 
   if (pagamento) {
+    dialog.classList.remove("hidden");
     const membroAssociado = pagamento["membro"];
     const nomeMembro = JSON.parse(localStorage.getItem(membroAssociado))[
       "nome"

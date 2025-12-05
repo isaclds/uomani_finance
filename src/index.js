@@ -6,6 +6,7 @@ export * from "./modules/editarMembro.js";
 export * from "./modules/cadastroPagamento.js";
 export * from "./modules/buscarPagamento.js";
 export * from "./modules/excluirPagamento.js";
+export * from "./modules/criaRelatorio.js"
 
 // Função para inicializar tudo quando a página carregar
 const initApp = function () {
