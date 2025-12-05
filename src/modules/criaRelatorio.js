@@ -91,19 +91,6 @@ const gerarRelatorioPagamentos = function(){
     const valores = pagamentosPorMes(meses)
     criarRelatorio(meses, valores)
 }
-/*
-    if (container){
-        const selectRelatorio = document.getElementById("select-relatorio")
-        const tipoRelatorio = selectRelatorio.value || 'membros';
-        const btnGerarRelatorio = document.getElementById("btn-gerar-relatorio")
-
-        if (tipoRelatorio === 'membros') {
-            btnGerarRelatorio.addEventListener('click', gerarRelatorioMembros)
-        } else if (tipoRelatorio === 'pagamentos') {
-            btnGerarRelatorio.addEventListener('click', gerarRelatorioPagamentos)
-        }
-    }
-        */ 
 
 if (container){
     // procura o <select> dentro do wrapper ou um elemento que contenha value

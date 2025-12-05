@@ -19,8 +19,8 @@
 
       <nav aria-label="Navegação principal">
         <ul>
-          <li><a href="/pages/report.html">Início</a></li>
-          <li><a href="/pages/client.html">Sobre</a></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre"">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
           <li>
             <button id="btn-entrar" button onclick="login.showModal()">
@@ -43,7 +43,7 @@
             Planos personalizados, consultoria e ferramentas para controlar suas
             finanças pessoais ou da sua empresa — tudo de forma simples e segura
           </p>
-          <a class="cta" href="#contato">Fale conosco</a>
+          <a class="cta" href="#contato" onclick="formularioContato.showModal()">Fale conosco</a>
 
           <div class="carta-grid" aria-hidden="false">
             <div class="carta">
@@ -62,7 +62,14 @@
             </div>
           </div>
         </div>
+
       </section>
+
+      <div id="imagens">
+        <img src="assets/images/uomani_confra.png" alt="Confraternização de fim de ano da Uomani Finance">
+        <img src="assets/images/uomani_gente.png" alt="Colaboradores da Uomani Finance em reunião de negócios">
+        <img src="assets/images/uomani_front.png" alt="Consultora da Uomani na frente da empresa">
+      </div>
 
       <section id="sobre">
         <div class="carta">
@@ -282,6 +289,32 @@
         </div>
       </form>
     </dialog>
+    <dialog id="formularioContato" aria-labelledby="contato-title">
+      <form >
+        <h2>Fale conosco</h2>
+        <label>
+          Nome
+          <input name="nome" type="text" required placeholder="Seu nome completo" />
+        </label>
+        <label>
+          E-mail
+          <input name="email" type="email" required placeholder="seu@exemplo.com" />
+        </label>
+        <label>
+          Assunto
+          <input name="assunto" type="text" placeholder="Assunto (opcional)" />
+        </label>
+        <label>
+          Mensagem
+          <textarea name="mensagem" required rows="6" placeholder="Escreva sua mensagem"></textarea>
+        </label>
+        <menu>
+          <button type="submit">Enviar</button>
+          <button type="button" onclick="formularioContato.close()">Cancelar</button>
+        </menu>
+      </form>
+    </dialog>
+
     <script type="module" src="/src/index.js"></script>
   </body>
 </html>

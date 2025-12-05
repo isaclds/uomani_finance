@@ -5,6 +5,10 @@ label {
   width: 90%;
 }
 
+textarea {
+  border-radius: 8px;
+}
+
 label * {
   width: 100%;
 }
