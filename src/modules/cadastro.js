@@ -39,8 +39,9 @@ const cadastrar = function () {
 };
 
 if (listaMembros) {
-  //Editar
   listaMembros.addEventListener("click", (event) => {
+    event.preventDefault();
+    //Editar
     if (event.target.classList.contains("btn-editar")) {
       identificacao = event.target.dataset.id;
 
@@ -48,7 +49,6 @@ if (listaMembros) {
       dialogCadastro.showModal();
     }
   });
-
 }
 
 if (formulario) {

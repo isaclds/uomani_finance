@@ -45,8 +45,8 @@ function criarCartaMembro(membro) {
   </div>
   
   <div>
-    <button class="editar" data-id="${id}">Editar</button>
-    <button class="deletar" data-id="${id}">Deletar</button>
+    <button class="btn-editar" data-id="${id}">Editar</button>
+    <button class="btn-deletar" data-id="${id}">Deletar</button>
   </div>
     `;
 
