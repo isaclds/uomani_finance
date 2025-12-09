@@ -8,9 +8,11 @@ export * from "./modules/excluirPagamento.js";
 export * from "./modules/criaRelatorio.js";
 
 // Função para inicializar tudo quando a página carregar
-const initApp = function () {
+function initApp() {
   const anoElement = document.getElementById("ano");
   if (anoElement) {
-    anoElement.textContent = new Date().getFullYear();
+    anoElement.textContent = new Date().getFullYear().toString();
   }
-};
+}
+
+document.addEventListener("DOMContentLoaded", initApp);
