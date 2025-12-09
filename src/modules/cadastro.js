@@ -1,4 +1,5 @@
 import { gerarIdComPrefixo } from "../utils/gerarID.js";
+import { capitalizarPrimeiraLetra } from "../utils/capitalizarPrimeiraLetra.js";
 
 ("use strict");
 const formulario = document.getElementById("cadastro-form");
@@ -9,18 +10,29 @@ const cadastrar = function () {
   const id = identificacao ? identificacao : gerarIdComPrefixo();
   identificacao = false;
 
+  const nome = capitalizarPrimeiraLetra(
+    formulario["cadastro-nome"].value.toLowerCase()
+  );
+  const email = formulario["cadastro-email"].value.toLowerCase();
+  const senha = formulario["cadastro-senha"].value;
+  const rendaMedia = formulario["cadastro-renda"].value;
+  const plano = formulario["cadastro-plano"].value;
+  //Verificar se o campo estado existe, se não existir, definir como ativo
+  const status = formulario["cadastro-status"]
+    ? formulario["cadastro-status"].value
+    : "ativo";
+  const dataNascimento = formulario["cadastro-data-nascimento"].value;
+  console.log(dataNascimento);
+
   const dadosCliente = {
     id: id,
-    nome: formulario["cadastro-nome"].value,
-    email: formulario["cadastro-email"].value.toLowerCase(),
-    senha: formulario["cadastro-senha"].value,
-    rendaMedia: formulario["cadastro-renda"].value,
-    plano: formulario["cadastro-plano"].value,
-    //Verificar se o campo estado existe, se não existir, definir como ativo
-    status: formulario["cadastro-status"]
-      ? formulario["cadastro-status"].value
-      : "ativo",
-    dataNascimento: formulario["cadastro-data-nascimento"].value,
+    nome: nome,
+    email: email,
+    senha: senha,
+    rendaMedia: rendaMedia,
+    plano: plano,
+    status: status,
+    dataNascimento: dataNascimento,
   };
 
   try {
@@ -52,6 +64,11 @@ if (listaMembros) {
 }
 
 if (formulario) {
+  const campoData = document.getElementById("cadastro-data-nascimento");
+  const dataMinima = new Date().toISOString().split("T")[0];
+
+  campoData.setAttribute("max", dataMinima);
+
   formulario.addEventListener("submit", function (event) {
     event.preventDefault();
     cadastrar();

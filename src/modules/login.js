@@ -1,16 +1,19 @@
-import {acessarMembros} from "/src/utils/acessarMembros.js"
+import { acessarMembros } from "/src/utils/acessarMembros.js";
 
 const formulario = document.getElementById("login-form");
 
 const login = function () {
   const email = formulario["login-email"].value;
   const senha = formulario["login-senha"].value;
-  const clientes = acessarMembros()
+  const clientes = acessarMembros();
   let clienteVerificado;
 
   try {
     for (const cliente of clientes) {
-      if(cliente["email"] == email)  clienteVerificado = cliente
+      if (cliente["email"] == email) {
+        clienteVerificado = cliente;
+        break;
+      }
     }
     if (clienteVerificado["senha"] === senha) {
       window.location.href = "/pages/client.html";
