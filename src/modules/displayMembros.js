@@ -44,7 +44,7 @@ function criarCartaMembro(membro) {
     </div>
   </div>
   
-  <div>
+  <div class="btn-grupo">
     <button class="btn-editar" data-id="${id}">Editar</button>
     <button class="btn-deletar" data-id="${id}">Deletar</button>
   </div>
@@ -84,6 +84,7 @@ if (listaMembros) {
       const membro = JSON.parse(localStorage.getItem(identificacao));
       membro.deletado = true;
       localStorage.setItem(identificacao, JSON.stringify(membro));
+      window.location.reload();
     }
   });
 

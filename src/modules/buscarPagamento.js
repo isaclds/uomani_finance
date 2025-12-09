@@ -2,9 +2,11 @@ import { capitalizarPrimeiraLetra } from "../utils/capitalizarPrimeiraLetra.js";
 import { formatarRenda } from "../utils/formatarRenda.js";
 import { verificaPagamento } from "../utils/verificaPagamento.js";
 
-const btn = document.getElementById("btn-buscar-membro");
+const btn = document.getElementById("btn-buscar-pagamento");
 
 const buscarPagamento = function () {
+  console.log("Entrou");
+
   const idPagamento = document.getElementById("busca-pagamento").value;
   const dialog = document.getElementById("mostraPagamento");
 

@@ -42,6 +42,8 @@ const cadastrar = function () {
     document.getElementById("cadastro").close();
     if (!formulario["cadastro-status"]) {
       window.location.href = "/pages/client.html";
+    } else {
+      window.location.reload();
     }
     console.log(formulario);
   } catch (error) {
@@ -50,10 +52,10 @@ const cadastrar = function () {
   }
 };
 
+//Editar
 if (listaMembros) {
   listaMembros.addEventListener("click", (event) => {
     event.preventDefault();
-    //Editar
     if (event.target.classList.contains("btn-editar")) {
       identificacao = event.target.dataset.id;
 

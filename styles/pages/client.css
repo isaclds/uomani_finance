@@ -1,13 +1,15 @@
 #principal {
-  display: flex;
-  flex: 1 1 0;
-  flex-wrap: wrap;
-  min-width: 250px;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(250px, 22vw, 360px), 1fr)
+  );
+  grid-template-rows: repeat(auto-fit, 1fr);
+  gap: 1vw;
 }
 
 .hero {
-  padding: 1%;
+  padding: 4%;
   margin-bottom: 2vh;
   margin-top: 2vh;
 }
@@ -64,8 +66,7 @@
 }
 
 .carta .btn-grupo {
-  display: flex;
-  justify-content: flex-start;
-  gap: 6%;
-  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  gap: 2vw;
 }

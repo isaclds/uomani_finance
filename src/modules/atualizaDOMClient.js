@@ -40,7 +40,7 @@ const receitaMediaMensal = function (membros) {
   receitaMediaMensal = (receitaMediaMensal / membros.length).toFixed(2);
   mediaReceita.textContent =
     "R$ " +
-    (formatarRenda(receitaMediaMensal) === NaN
+    (formatarRenda(receitaMediaMensal) !== NaN
       ? formatarRenda(receitaMediaMensal)
       : 0);
 };
