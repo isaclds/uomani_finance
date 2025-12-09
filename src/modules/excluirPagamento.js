@@ -1,6 +1,6 @@
 import { verificaPagamento } from "../utils/verificaPagamento.js";
 
-const btn = document.getElementById("btn-adicionar-membro");
+const btn = document.getElementById("btn-excluir-pagamento");
 
 const excluirPagamento = function () {
   const idPagamento = document.getElementById("exclui-pagamento").value;

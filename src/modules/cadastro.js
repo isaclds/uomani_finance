@@ -38,7 +38,7 @@ const cadastrar = function () {
   }
 };
 
-if (formulario) {
+if (listaMembros) {
   //Editar
   listaMembros.addEventListener("click", (event) => {
     if (event.target.classList.contains("btn-editar")) {
@@ -48,6 +48,10 @@ if (formulario) {
       dialogCadastro.showModal();
     }
   });
+
+}
+
+if (formulario) {
   formulario.addEventListener("submit", function (event) {
     event.preventDefault();
     cadastrar();

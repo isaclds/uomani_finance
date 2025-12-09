@@ -1,13 +1,21 @@
+import {acessarMembros} from "/src/utils/acessarMembros.js"
+
 const formulario = document.getElementById("login-form");
 
 const login = function () {
   const email = formulario["login-email"].value;
   const senha = formulario["login-senha"].value;
-  const dadosCliente = JSON.parse(localStorage.getItem(email));
+  const clientes = acessarMembros()
+  let clienteVerificado;
+
   try {
-    if (dadosCliente["senha"] === senha) {
+    for (const cliente of clientes) {
+      if(cliente["email"] == email)  clienteVerificado = cliente
+    }
+    if (clienteVerificado["senha"] === senha) {
       window.location.href = "/pages/client.html";
     } else {
+      formulario.reset();
       alert("Usuário ou senha incorretos!");
     }
   } catch (error) {
