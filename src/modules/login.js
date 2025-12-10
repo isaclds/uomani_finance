@@ -13,6 +13,10 @@ const login = function () {
       if (cliente["email"] == email) {
         clienteVerificado = cliente;
         break;
+      } else {
+        formulario.reset();
+        alert("Usuário ou senha incorretos!");
+        break;
       }
     }
     if (clienteVerificado["senha"] === senha) {
