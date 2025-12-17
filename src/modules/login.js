@@ -7,18 +7,22 @@ const login = function () {
   const senha = formulario["login-senha"].value;
   const clientes = acessarMembros();
   let clienteVerificado;
+  let contador = 0;
 
   try {
     for (const cliente of clientes) {
-      if (cliente["email"] == email) {
-        clienteVerificado = cliente;
-        break;
-      } else {
-        formulario.reset();
-        alert("Usuário ou senha incorretos!");
-        break;
-      }
+      //Verifica se email é igual
+      if (cliente["email"] !== email) continue;
+      clienteVerificado = cliente;
+      break;
     }
+    //Verifica se foi existe um email daquele
+    if (clienteVerificado === undefined) {
+      formulario.reset();
+      alert("Usuário ou senha incorretos!");
+      return;
+    }
+    //Verifica se a senha é igual
     if (clienteVerificado["senha"] === senha) {
       window.location.href = "/pages/client.html";
     } else {
